@@ -63,12 +63,15 @@ document.getElementById("lotusflow-logo").appendChild(renderer.domElement);
 // sets how far camera is from 3d models
 camera.position.z = 30;
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.98);
-directionalLight.position.set(5, 10, 7.5);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+directionalLight.position.set(2, 10, 5);
 scene.add(directionalLight);
 
 const ambientLight = new THREE.AmbientLight(0x333333, 1);
 scene.add(ambientLight);
+
+renderer.shadowMap.enabled = true; // Enable shadow maps
+renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Use soft shadow type
 
 // scroll rotate animation
 let lastScrollTop = 0;
@@ -88,6 +91,8 @@ window.addEventListener('scroll', function () {
     // update last scroll position
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
+
+
 
 // renders scene
 function animate() {
