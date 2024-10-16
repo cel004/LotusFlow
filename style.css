@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    background-color: #e3d5df;
+
+}
+
+html {
+    overflow-y: scroll; 
+    scroll-behavior: smooth;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+
+    transform: translateY(-400px);
+
+    
+}
+
+#lotusflow-logo canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+body {
+    height: 5000px
+}
